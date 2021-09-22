@@ -10,5 +10,9 @@ setup(
         'torch',
         'numpy',
         'torchvision',
+        'pytest',
+        'matplotlib',
+        'snscrape',
+        'Pillow'
     ],
 )

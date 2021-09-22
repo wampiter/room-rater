@@ -1,6 +1,6 @@
 from os import path
 
-from room_rate.data.data_loader import RatedImageDataset
+from room_rate.data.dataset import RatedImageDataset
 
 def test_single_load():
     my_path = path.dirname(path.realpath(__file__))

@@ -1,7 +1,14 @@
+'''pytorch dataset (RatedImageDataset) for loading rated image data'''
 from glob import glob
 import os
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset
 from torchvision import io
+
+def get_rating(imname):
+    '''pull rating from image name string'''
+    rating = imname.split("_")[-1]
+    rating = int(rating.split(".")[0])
+    return rating
 
 class RatedImageDataset(Dataset):
     '''Rated Image Dataset'''
@@ -24,8 +31,7 @@ class RatedImageDataset(Dataset):
     def __getitem__(self, idx):
         iname = self.inames[idx]
         image = io.read_image(iname)
-        rating = iname.split("_")[-1]
-        rating = int(rating.split(".")[0])
+        rating = get_rating(iname)
         if self.transform is not None:
             image = self.transform(image)
         return image, rating
