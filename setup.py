@@ -12,7 +12,7 @@ setup(
         'torchvision',
         'pytest',
         'matplotlib',
-        'snscrape',
-        'Pillow'
+        'tqdm',
+        'Pillow',
     ],
 )

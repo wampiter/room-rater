@@ -9,14 +9,24 @@ Initial testing shows some (weak) ability to predict ratings in the test set (th
 pip install -e .
 ```
 
-## Use
-Data downloading currently in src/room_rate/data/data_downloader.ipynb  *#TODO change to module*
+If you wish to download data from twitter you will also need to install the developer version of snscrape:
+```
+pip3 install git+https://github.com/JustAnotherArchivist/snscrape.git
+```
+## Test
+To test that the code is working run `pytest` from this directory:
+```
+pytest
+```
+Note that this currently assumes developer version of snscrape is installed.
 
-Data manipulation in data/data_manipulation.ipybn *#TODO change to module*
+## Use
+You can download images from twitter by creating a data directory here `mkdir data`, then running
+`python3 src/room_rate/data/data_downloader.py` (or import this module for more detailed options)
+
+Remove ratings you want to exclude (e.g. 0) and sort into train/test sets by running `python3 src/room_rate/data/data_organizer.py`. (again, more details in module)
 
 Training and testing in **notebooks/train.ipynb**
-
-Tests in test/ can be run with pytest
 
 ### Aditional TODO
 - Experiments
