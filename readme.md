@@ -39,9 +39,9 @@ Starting with a pre-trained model (resnet18) does seem to be somewhat advantageo
 
 ### Aditional TODO
 - Experiments
-    - Treat as classification (e.g. cross-entropy loss) instead of regression
+    - ~~Treat as classification (e.g. cross-entropy loss) instead of regression~~
     - Other architectures
     - Over/random-sampling to get (more) even representation across ratings
     - Use (scaled) sigmoid at output for regression (MSE) version
-    - Fine-tune a trained model?
-- Set up convenient inference flow
+    - ~~Fine-tune a trained model~~
+- Set up convenient inference flow (convert infer.ipynb to module)
