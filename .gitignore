@@ -140,3 +140,7 @@ cython_debug/
 .DS_Store
 .idea
 data/*
+*.pt
+*.png
+*.jpg
+*.JPG

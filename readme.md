@@ -2,7 +2,7 @@
 This project attempts to rate images based on the aesthetic preferences learned from the training set. Specifically, the dataset I've used so far is (a few thousand of) [@ratemyskyperoom's](https://twitter.com/ratemyskyperoom) ratings of video-call rooms.
 
 Initial testing shows some (weak) ability to predict ratings in the test set (the most recent ~750 rated room tweets):
-![Test Results](imgs/Mean_Std_Results_MSELoss.png)
+![Test Results](imgs/MSE_Resnet18_Pretrained_noFeatureExtract_noAugment_1Epoch_LR1e-3.png)
 
 ## Install
 ```
