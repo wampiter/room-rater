@@ -1,8 +1,13 @@
 ## About
 This project attempts to rate images based on the aesthetic preferences learned from the training set. Specifically, the dataset I've used so far is (a few thousand of) [@ratemyskyperoom's](https://twitter.com/ratemyskyperoom) ratings of video-call rooms.
 
-Initial testing shows some (weak) ability to predict ratings in the test set (the most recent ~750 rated room tweets):
+Initial testing shows some ability to predict ratings in the test set (the most recent ~750 rated room tweets):
 ![Test Results](imgs/MSE_Resnet18_Pretrained_noFeatureExtract_noAugment_1Epoch_LR1e-3.png)
+
+Initial experiments show that regression seems to yield better results than classification (MSE rather than cross-entropy loss), but more testing could be done. A result of this is that predictions tend to cluster near the average rating -- 8.5 for the training set, despite the rating range of 1-10. If we look at the histogram of ratings we can see clearly why this is the case, and why our performance is particularly poor below a rating of 4 or so. In fact, it's slightly surprising that this even works below a rating of 6: ![Training Rating Histogram](imgs/train_rate_freq.png)
+
+Testing on my own images (not officially rated by @ratemyskyperoom) shows reasonable results as well!:
+![my room](imgs/my_room.png)
 
 ## Install
 ```
@@ -27,6 +32,10 @@ You can download images from twitter by creating a data directory here `mkdir da
 Remove ratings you want to exclude (e.g. 0) and sort into train/test sets by running `python3 src/room_rate/data/data_organizer.py`. (again, more details in module)
 
 Training and testing in **notebooks/train.ipynb**
+
+## Additional Experiment Notes:
+
+Starting with a pre-trained model (resnet18) does seem to be somewhat advantageous over a randomly initialized resnet18, though only training final layer weights does not work as well as updating all the weights.
 
 ### Aditional TODO
 - Experiments
