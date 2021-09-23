@@ -37,7 +37,7 @@ Training and testing in **notebooks/train.ipynb**
 
 Starting with a pre-trained model (resnet18) does seem to be somewhat advantageous over a randomly initialized resnet18, though only training final layer weights does not work as well as updating all the weights.
 
-### Aditional TODO
+### To Do
 - Experiments
     - ~~Treat as classification (e.g. cross-entropy loss) instead of regression~~
     - Other architectures
