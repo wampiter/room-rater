@@ -47,4 +47,5 @@ Starting with a pre-trained model (resnet18) does seem to be somewhat advantageo
     - Over/random-sampling to get (more) even representation across ratings
     - Use (scaled) sigmoid at output for regression (MSE) version
     - ~~Fine-tune a trained model~~
+    - Compare performance of much simpler models (e.g. looking at histogram of pixel values)
 - Set up convenient inference flow (convert infer.ipynb to module)
